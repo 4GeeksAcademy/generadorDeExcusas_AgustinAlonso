@@ -44,35 +44,11 @@ function ramdom(maxNumInt) {
 }
 
 window.onload = function() {
-  let quien;
-  let accion;
-  let que;
-  let cuando;
+  let quien = quienArray[Math.floor(Math.random() * quienArray.length)];
+  let accion = accionArray[Math.floor(Math.random() * accionArray.length)];
+  let que = queArray[Math.floor(Math.random() * queArray.length)];
+  let cuando = cuandoArray[Math.floor(Math.random() * cuandoArray.length)];
 
-  //Para cada array, en función de cual sea, seleccionamos un elemento al azar dentro de este y se lo asignamos a cada variable de arriba.
-  Arrays.forEach(element => {
-    console.log(element);
-    switch (element) {
-      case quienArray:
-        quien = element[ramdom(5)];
-        break;
-
-      case accionArray:
-        accion = element[ramdom(5)];
-        break;
-
-      case queArray:
-        que = element[ramdom(5)];
-        break;
-
-      case cuandoArray:
-        cuando = element[ramdom(5)];
-
-        break;
-      default:
-        break;
-    }
-  });
   //Imprimimos en la consola y modificamos el contenido del elemento html con id excusa
   console.log(`${quien} ${accion} ${que} ${cuando}`);
   excusa.innerHTML = `${quien} ${accion} ${que} ${cuando}`;
